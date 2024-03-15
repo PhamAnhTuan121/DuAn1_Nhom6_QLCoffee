@@ -33,7 +33,7 @@ CREATE TABLE HoaDon(
 	Ten NVARCHAR(50),
 	diaChi NVARCHAR(50),
 	tenShip INT, 
-	ID_GiamGia varchar(50)
+	ID_GiamGiaCT int 
 )
 
 GO 
@@ -102,11 +102,11 @@ CREATE TABLE GiamGia(
 )
 GO
 CREATE TABLE Giamgiachitiet(
-	Id_GiamGia INT IDENTITY(1,1) primary key,
+	Id_GiamGiaCT INT IDENTITY(1,1) primary key,
 	ID_Sanpham VARCHAR(10),
 	Giam INT,
-	dkGiamGia nvarchar(50)
-
+	dkGiamGia nvarchar(50),
+	Id_GiamGia INT 
 )
 GO 
 --Foreign key
@@ -122,6 +122,8 @@ ALTER TABLE dbo.BanChiTiet ADD FOREIGN KEY(ID_Hoadon) REFERENCES dbo.HoaDon(ID_H
 ALTER TABLE dbo.GiamGia ADD FOREIGN KEY(ID_Nhanvien) REFERENCES dbo.NhanVien(ID_Nhanvien) --GiamGia
 ALTER TABLE dbo.Giamgiachitiet ADD FOREIGN KEY(Id_GiamGia) REFERENCES dbo.GiamGia(Id_GiamGia) --Giamgiachitiet
 ALTER TABLE dbo.Giamgiachitiet ADD FOREIGN KEY(ID_Sanpham) REFERENCES dbo.SanPham(ID_Sanpham) --Giamgiachitiet
+
+ALTER TABLE dbo.HoaDon ADD FOREIGN KEY(ID_GiamGiaCT) REFERENCES dbo.Giamgiachitiet(ID_GiamGiaCT  ) --HoaDon
 --
 ------------------ PHẦN TRUY VẤN -------------------
 select * from NhanVien
