@@ -9,5 +9,5 @@ package dao;
  * @author ADMIN
  */
 public class BanDao {
-    
+
 }
