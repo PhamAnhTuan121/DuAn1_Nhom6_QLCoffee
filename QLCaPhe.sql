@@ -164,7 +164,7 @@ INSERT dbo.SanPham VALUES ('SP10',N'TH True Milk',9000,'DV1','LSP5',1,N'') -- S�
 go
 --Nhanvien
 INSERT dbo.NhanVien VALUES('NV1',N'Phạm Anh Tuấn',1,'12/01/2004',N'Bắc Giang',N'tuanpaph35819@fpt.edu.vn','0123456789','tuan','1',1, 1,N'')
-INSERT dbo.NhanVien VALUES('NV2',N'Dương Văn Quốc',1,'2002/04/30',N'Hà Nội',N'duong.quoc304@gmail.com','0123456789','duongquoc','1',1, 1,N'')
+INSERT dbo.NhanVien VALUES('NV2',N'Nguyễn Huy Hoàng',1,'2002/11/02',N'Hà Nội',N'hoangnhph46299@fpt.edu.vn','0123456789','hoangnh','1',1, 1,N'')
 INSERT dbo.NhanVien VALUES('NV3',N'Lương Văn Sơn',1,'2000/10/11',N'Hà Nội',N'luongvanson@gmail.com','0123456789','son','1',1, 1,N'')
 INSERT dbo.NhanVien VALUES('NV4',N'Phạm Đức Hoàn',1,'1995/10/11',N'Hà Nội',N'phamduchoan@gmail.com','0123456789','hoan','1',1, 1,N'')
 INSERT dbo.NhanVien VALUES('NV5',N'Nhân Viên A',0,'2004/10/11',N'Hà Nội',N'nhanviena@gmail.com','0123456789','nhanviena','1',0, 1,N'')
