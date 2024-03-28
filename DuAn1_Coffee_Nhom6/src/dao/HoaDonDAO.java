@@ -53,5 +53,75 @@ public class HoaDonDAO implements InterfaceHoadon {
     String select_all_sql_find_HoatDong_1ngay = "select *from HoaDon where Ngaytao =?  and Trangthai = 0";
     String select_all_sql_find_HoatDong_1ngay_dathanhtoan = "select *from HoaDon where Ngaytao =?  and Trangthai = 0 AND TTThanhtoan = 1";
     String select_all_sql_find_HoatDong_1ngay_chuathanhtoan = "select *from HoaDon where Ngaytao =?  and Trangthai = 0 AND TTThanhtoan = 0";
-    
-    
+
+    @Override
+    public void insert(Hoadon Entity) {
+        Helper.JDBCHeper.update(INSERT_SQL, Entity.getIdNhanVien(), Entity.getNgayTao(), Entity.isTrangThai(),
+                Entity.isTrangThaiTT(), Entity.getThanhTien(), Entity.getLyDoHuy(), Entity.getSlSanPhamHuy(), Entity.getGhiChu(),
+                Entity.getSDT(), Entity.getTen(), Entity.getDiaChi(), Entity.getTienShip());
+    }
+
+    @Override
+    public void updateThanhToan(Hoadon Entity) {
+        Helper.JDBCHeper.update(UPDATE_SQL_TrangThaiTT, Entity.isTrangThaiTT(), Entity.getIdHoaDon());
+    }
+
+    @Override
+    public void delete(Hoadon Entity) {
+        Helper.JDBCHeper.update(DELETE_SQL, Entity.getIdHoaDon());
+    }
+
+    public void updatekh(Hoadon Entity) {
+        Helper.JDBCHeper.update(UPDATE_SQL_khachhang, Entity.getSDT(), Entity.getTen(), Entity.getTienShip(), Entity.getDiaChi(), Entity.getIdHoaDon());
+    }
+
+    @Override
+    public Hoadon selectById(int id) {
+        List<Hoadon> list = this.selectBySql(SELECT_BY_ID_SQL, id);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list.get(0);
+    }
+
+    @Override
+    public List<Hoadon> selectAll() {
+        return this.selectBySql(SELECT_ALL_SQL);
+    }
+
+    @Override
+    public List<Hoadon> selectBySql(String sql, Object... args) {
+        List<Hoadon> list = new ArrayList<>();
+        try {
+            ResultSet rs = JDBCHeper.query(sql, args);
+            while (rs.next()) {
+                Hoadon Entity = new Hoadon();
+                Entity.setIdHoaDon(rs.getInt("ID_Hoadon"));
+                Entity.setIdNhanVien(rs.getString("ID_Nhanvien"));
+                Entity.setNgayTao(rs.getDate("Ngaytao"));
+                Entity.setTrangThai(rs.getBoolean("Trangthai"));
+                Entity.setTrangThaiTT(rs.getBoolean("TTthanhtoan"));
+                Entity.setThanhTien(rs.getInt("Thanhtien"));
+                Entity.setLyDoHuy(rs.getString("Lydohuy"));
+                Entity.setSlSanPhamHuy(rs.getInt("Soluongsanphamhuy"));
+                Entity.setGhiChu(rs.getString("ghichu"));
+                Entity.setSDT(rs.getString("SDT"));
+                Entity.setTen(rs.getString("Ten"));
+                Entity.setDiaChi(rs.getString("diaChi"));
+                Entity.setTienShip(rs.getInt("tenShip"));
+                list.add(Entity);
+            }
+            rs.getStatement().getConnection().close();
+            return list;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<Hoadon> selectCTT(int key) {
+        return selectBySql(SELECT_ALL_SQL_HD_CTT_BY_ID_BAN, key);
+    }
+
+    public List<Hoadon> selectCTTALL() {
+        return selectBySql(SELECT_ALL_SQL_HD_CTT);
+    }
