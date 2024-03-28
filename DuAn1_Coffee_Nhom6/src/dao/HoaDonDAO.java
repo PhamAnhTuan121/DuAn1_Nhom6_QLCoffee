@@ -125,3 +125,181 @@ public class HoaDonDAO implements InterfaceHoadon {
     public List<Hoadon> selectCTTALL() {
         return selectBySql(SELECT_ALL_SQL_HD_CTT);
     }
+
+    @Override
+    public void updateTrangThai(Hoadon Entity) {
+        Helper.JDBCHeper.update(UPDATE_SQL_TrangThai, Entity.isTrangThai(), Entity.getIdHoaDon());
+    }
+
+    @Override
+    public void updateThanhtien(Hoadon Entity) {
+        Helper.JDBCHeper.update(UPDATE_SQL_ThanhTien, Entity.getThanhTien(), Entity.getIdHoaDon());
+    }
+
+    @Override
+    public void updateLydohuy(Hoadon Entity) {
+        Helper.JDBCHeper.update(UPDATE_SQL_Ly_DO, Entity.getLyDoHuy(), Entity.getIdHoaDon());
+    }
+
+    @Override
+    public void updateSLSPHUY(Hoadon Entity) {
+        Helper.JDBCHeper.update(UPDATE_SQL_DEM_SP_HUY, Entity.getSlSanPhamHuy(), Entity.getIdHoaDon());
+    }
+
+    @Override
+    public List<Hoadon> selectAll_trangthai1() {
+        return selectBySql(SELECT_ALL_SQL_trangthai1);
+    }
+
+    public List<Hoadon> selectByIdNV(String id) {
+        return selectBySql(SELECT_ALL_SQL_trangthai, id);
+    }
+
+    public List<Hoadon> selectAll_trangthai1_chuathanhtoan(String id) {
+        return selectBySql(SELECT_ALL_SQL_trangthai1_chuathanhtoan, id);
+    }
+
+    public List<Hoadon> selectAll_trangthai1_dathanhtoan(String id) {
+        return selectBySql(SELECT_ALL_SQL_trangthai1_dathanhtoan, id);
+    }
+
+    @Override
+    public List<Hoadon> selectAll_trangthai0() {
+        return selectBySql(SELECT_ALL_SQL_trangthai0);
+    }
+
+    public List<Hoadon> selectAll_trangthai0v1(String id) {
+        return selectBySql(SELECT_ALL_SQL_trangthai0, id);
+    }
+
+    public List<Hoadon> selectAll_trangthai0_chuathanhtoan(String id) {
+        return selectBySql(SELECT_ALL_SQL_trangthai0_chuathanhtoan, id);
+    }
+
+    public List<Hoadon> selectAll_trangthai0_dathanhtoan(String id) {
+        return selectBySql(SELECT_ALL_SQL_trangthai0_dathanhtoan, id);
+    }
+
+    @Override
+    public List<Hoadon> selectAll_SQL_Find_HoatDong(Date a, Date b) {
+        List<Hoadon> list = this.selectBySql(select_all_sql_find_HOATDOng, a, b);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+
+    public List<Hoadon> selectAll_SQL_Find_HoatDong_chuathanhtoan(Date a, Date b) {
+        List<Hoadon> list = this.selectBySql(select_all_sql_find_HOATDOng_chuathanhtoan, a, b);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+
+    public List<Hoadon> selectAll_SQL_Find_HoatDong_dathanhtoan(Date a, Date b) {
+        List<Hoadon> list = this.selectBySql(select_all_sql_find_HOATDOng_dathanhtoan, a, b);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+
+    @Override
+    public List<Hoadon> selectAll_SQL_Find_HoatDong_keyword(String keyword) {
+        String sql = "SELECT * FROM HoaDon WHERE ID_Hoadon LIKE ? and Trangthai = 1 ";
+        return selectBySql(sql, "%" + keyword + "%");
+    }
+
+    @Override
+    public List<Hoadon> select_all_sql_find_HoatDong_keyword_IDMaNV(String keyword) {
+        return selectBySql(select_all_sql_find_HoatDong_keyword_IDMaNV, "%" + keyword + "%");
+    }
+
+    @Override
+    public List<Hoadon> select_all_sql_find_KoHoatDong_keyword_IDMaNV(String keyword) {
+        return selectBySql(select_all_sql_find_KoHoatDong_keyword_IDMaNV, "%" + keyword + "%");
+    }
+
+    @Override
+    public List<Hoadon> selectAll_SQL_Find_koHoatDong_keyword(String keyword) {
+        String sql = "SELECT * FROM HoaDon WHERE ID_Hoadon LIKE ? and Trangthai = 0 ";
+        return selectBySql(sql, "%" + keyword + "%");
+    }
+
+    @Override
+    public List<Hoadon> selectAll_SQL_Find_KoHoatDong(Date a, Date b) {
+        List<Hoadon> list = this.selectBySql(select_all_sql_find_KoHoatDong, a, b);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+
+    public List<Hoadon> selectAll_SQL_Find_KoHoatDong_dathanhtoan(Date a, Date b) {
+        List<Hoadon> list = this.selectBySql(select_all_sql_find_KoHoatDong_dathanhtoan, a, b);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+
+    public List<Hoadon> selectAll_SQL_Find_KoHoatDong_chuathanhtoan(Date a, Date b) {
+        List<Hoadon> list = this.selectBySql(select_all_sql_find_KoHoatDong_chuathanhtoan, a, b);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+
+    @Override
+    public List<Hoadon> selectAll_SQL_Find_HoatDong_1ngay(Date a) {
+        List<Hoadon> list = this.selectBySql(select_all_sql_find_HoatDong_1ngay, a);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+
+    public List<Hoadon> selectAll_SQL_Find_HoatDong_1ngay_dathanhtoan(Date a) {
+        List<Hoadon> list = this.selectBySql(select_all_sql_find_HoatDong_1ngay_dathanhtoan, a);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+
+    public List<Hoadon> selectAll_SQL_Find_HoatDong_1ngay_chuathanhtoan(Date a) {
+        List<Hoadon> list = this.selectBySql(select_all_sql_find_HoatDong_1ngay_chuathanhtoan, a);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+
+    @Override
+    public List<Hoadon> selectAll_SQL_Find_KoHoatDong_1ngay(Date a) {
+        List<Hoadon> list = this.selectBySql(select_all_sql_find_KoHoatDong_1ngay, a);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+
+    public List<Hoadon> selectAll_SQL_Find_KoHoatDong_1ngay_dathanhtoan(Date a) {
+        List<Hoadon> list = this.selectBySql(select_all_sql_find_KoHoatDong_1ngay_dathanhtoan, a);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+
+    public List<Hoadon> selectAll_SQL_Find_KoHoatDong_1ngay_chuathanhtoan(Date a) {
+        List<Hoadon> list = this.selectBySql(select_all_sql_find_KoHoatDong_1ngay_chuathanhtoan, a);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+
+}
