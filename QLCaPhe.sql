@@ -167,6 +167,7 @@ INSERT dbo.NhanVien VALUES('NV1',N'Phạm Anh Tuấn',1,'12/01/2004',N'Bắc Gia
 INSERT dbo.NhanVien VALUES('NV2',N'Nguyễn Huy Hoàng',1,'2002/11/02',N'Hà Nội',N'hoangnhph46299@fpt.edu.vn','0123456789','hoangnh','1',1, 1,N'')
 INSERT dbo.NhanVien VALUES('NV3',N'Trương Công Tuyển',1,'2002/06/14',N'Bắc Giang',N'tuyentcph45835@fpt.edu.vn','0967024785','tuyen','1',1, 1,N'')
 INSERT dbo.NhanVien VALUES('NV5',N'Nhân Viên A',0,'2004/10/11',N'Hà Nội',N'nhanviena@gmail.com','0123456789','nhanviena','1',0, 1,N'')
+INSERT dbo.NhanVien VALUES('NV4',N'Đỗ Xuân Giáp',1,'2004/01/23',N'Đông Anh',N'giapdxph45402@fpt.edu.vn','0967035496','giap','1',1, 1,N'')
 go
 --Giam
 INSERT dbo.GiamGia VALUES(N'Noel','NV1',GETDATE(),GETDATE())
