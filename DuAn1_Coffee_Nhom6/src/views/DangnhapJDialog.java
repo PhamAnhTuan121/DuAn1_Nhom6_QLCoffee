@@ -5,7 +5,7 @@
  */
 package views;
 
-import dao1.NhanVienDAO;
+import dao.NhanVienDAO;
 import model.NhanVien;
 import helper.Auth;
 import helper.MsgBox;
