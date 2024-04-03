@@ -1,18 +1,12 @@
-
 package helper;
 
 import java.sql.*;
+
 public class JDBCHeper {
    static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
    static String url = "jdbc:sqlserver://127.0.0.1:1433;databaseName=UPCOFFEE";
    static String user ="sa";// đây là tài khoản, ở đây mình sẽ đổi thành admin
    static String password ="123456";// đây là mật khẩu
-
-//    static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-//    static String url = "jdbc:sqlserver://127.0.0.1:1433;databaseName=QUANLYCAPHEBANME";//kết nối db
-//    static String user = "admin1";//tài khoản 
-//    static String password = "12345";//mật khẩu
-    
      static {
         try {
             Class.forName(driver);
@@ -23,7 +17,7 @@ public class JDBCHeper {
     }
 
     public static PreparedStatement getStmt(String sql, Object... args) throws Exception {
-        Connection con = DriverManager.getConnection(url, user, password);//kết nối
+        Connection con = DriverManager.getConnection(url, user, password);
         PreparedStatement stmt;
         if (sql.trim().startsWith("{")) {
             stmt = con.prepareCall(sql);//câu lệnh SQl là thủ tục

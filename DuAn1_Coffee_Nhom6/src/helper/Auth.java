@@ -3,10 +3,7 @@ package helper;
 
 import model.NhanVien;
 
-/**
- *
- * @author Admin
- */
+
 public class Auth {
     public static NhanVien user = null;
     
