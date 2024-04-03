@@ -1,14 +1,13 @@
 
 package dao;
 
-import daoimpl.InterfaceHoadonchittiet;
 import model.HoaDonChiTiet;
 import helper.JDBCHeper;
 import java.sql.ResultSet;
 import model.SanPham;
 import java.util.ArrayList;
 import java.util.List;
-
+import daoimpl.InterfaceHoadonchittiet;
 public class HoadonchitietDAO implements InterfaceHoadonchittiet {
 
     String INSERT_SQL = "INSERT dbo.HoaDonChiTiet VALUES (?,?,?,?,?,?,?,?)";
