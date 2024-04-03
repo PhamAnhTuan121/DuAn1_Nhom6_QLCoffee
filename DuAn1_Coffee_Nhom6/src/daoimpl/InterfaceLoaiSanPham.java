@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package daoimpl;
-import Model.*;
+import model.*;
 import java.util.List;
 /**
  *
