@@ -5,7 +5,7 @@
  */
 package daoimpl;
 
-import Model.NhanVien;
+import model.NhanVien;
 
 import java.util.List;
 
