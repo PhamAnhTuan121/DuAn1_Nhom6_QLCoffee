@@ -1,6 +1,6 @@
 
-package Dao;
-public class Hoadonchitiet {
+package dao;
+public class HoaDonChiTiet {
     private int ID_Hoadon;
     private String ID_SanPHam;
     private int Soluong;
@@ -9,9 +9,9 @@ public class Hoadonchitiet {
     private boolean trangThai;
     private String lyDoHuy;
     private String ghiChu;
-    public Hoadonchitiet() {
+    public HoaDonChiTiet() {
     }
-    public Hoadonchitiet(int ID_Hoadon, String ID_SanPHam, int Soluong, int gia, int tongGia, boolean trangThai, String lyDoHuy, String ghiChu) {
+    public HoaDonChiTiet(int ID_Hoadon, String ID_SanPHam, int Soluong, int gia, int tongGia, boolean trangThai, String lyDoHuy, String ghiChu) {
         this.ID_Hoadon = ID_Hoadon;
         this.ID_SanPHam = ID_SanPHam;
         this.Soluong = Soluong;
@@ -85,4 +85,5 @@ public class Hoadonchitiet {
     public void setGhiChu(String ghiChu) {
         this.ghiChu = ghiChu;
     }
+}
     
