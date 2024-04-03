@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package dao;
-
-import dao.impl.InterfaceGiamGia;
+import daoimpl.InterfaceGiamGia;
 import model.NhanVien;
 import model.GiamGia;
 import java.util.List;

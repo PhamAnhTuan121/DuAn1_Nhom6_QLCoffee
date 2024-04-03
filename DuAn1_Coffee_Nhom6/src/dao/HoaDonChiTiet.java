@@ -1,4 +1,3 @@
-
 package dao;
 public class HoaDonChiTiet {
     private int ID_Hoadon;
