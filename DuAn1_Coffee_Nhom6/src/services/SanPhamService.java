@@ -4,7 +4,7 @@
  */
 package services;
 import model.SanPham;
-import dao1.SanPhamDao;
+import dao.SanPhamDao;
 /**
  *
  * @author Admin
