@@ -1,7 +1,11 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package dao;
 
-import daoimpl.InterfaceHoadon;
+import dao.impl.InterfaceHoadon;
 import model.Hoadon;
 import helper.JDBCHeper;
 import java.sql.ResultSet;
@@ -11,9 +15,9 @@ import java.util.List;
 
 /**
  *
- * @author ctuye
+ * @author HP
  */
-public class HoaDonDAO implements InterfaceHoadon {
+public class HoaDonDAO1 implements InterfaceHoadon {
 
     String INSERT_SQL = "INSERT dbo.HoaDon VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
     String UPDATE_SQL_TrangThai = "UPDATE dbo.HoaDon SET Trangthai = ? WHERE ID_Hoadon = ?";
@@ -53,23 +57,23 @@ public class HoaDonDAO implements InterfaceHoadon {
 
     @Override
     public void insert(Hoadon Entity) {
-        Helper.JDBCHeper.update(INSERT_SQL, Entity.getIdNhanVien(), Entity.getNgayTao(), Entity.isTrangThai(),
+        helper.JDBCHeper.update(INSERT_SQL, Entity.getIdNhanVien(), Entity.getNgayTao(), Entity.isTrangThai(),
                 Entity.isTrangThaiTT(), Entity.getThanhTien(), Entity.getLyDoHuy(), Entity.getSlSanPhamHuy(), Entity.getGhiChu(),
                 Entity.getSDT(), Entity.getTen(), Entity.getDiaChi(), Entity.getTienShip());
     }
 
     @Override
     public void updateThanhToan(Hoadon Entity) {
-        Helper.JDBCHeper.update(UPDATE_SQL_TrangThaiTT, Entity.isTrangThaiTT(), Entity.getIdHoaDon());
+        helper.JDBCHeper.update(UPDATE_SQL_TrangThaiTT, Entity.isTrangThaiTT(), Entity.getIdHoaDon());
     }
 
     @Override
     public void delete(Hoadon Entity) {
-        Helper.JDBCHeper.update(DELETE_SQL, Entity.getIdHoaDon());
+        helper.JDBCHeper.update(DELETE_SQL, Entity.getIdHoaDon());
     }
 
     public void updatekh(Hoadon Entity) {
-        Helper.JDBCHeper.update(UPDATE_SQL_khachhang, Entity.getSDT(), Entity.getTen(), Entity.getTienShip(), Entity.getDiaChi(), Entity.getIdHoaDon());
+        helper.JDBCHeper.update(UPDATE_SQL_khachhang, Entity.getSDT(), Entity.getTen(), Entity.getTienShip(), Entity.getDiaChi(), Entity.getIdHoaDon());
     }
 
     @Override
@@ -125,52 +129,48 @@ public class HoaDonDAO implements InterfaceHoadon {
 
     @Override
     public void updateTrangThai(Hoadon Entity) {
-        Helper.JDBCHeper.update(UPDATE_SQL_TrangThai, Entity.isTrangThai(), Entity.getIdHoaDon());
+        helper.JDBCHeper.update(UPDATE_SQL_TrangThai, Entity.isTrangThai(), Entity.getIdHoaDon());
     }
 
     @Override
     public void updateThanhtien(Hoadon Entity) {
-        Helper.JDBCHeper.update(UPDATE_SQL_ThanhTien, Entity.getThanhTien(), Entity.getIdHoaDon());
+        helper.JDBCHeper.update(UPDATE_SQL_ThanhTien, Entity.getThanhTien(), Entity.getIdHoaDon());
     }
 
     @Override
     public void updateLydohuy(Hoadon Entity) {
-        Helper.JDBCHeper.update(UPDATE_SQL_Ly_DO, Entity.getLyDoHuy(), Entity.getIdHoaDon());
+        helper.JDBCHeper.update(UPDATE_SQL_Ly_DO, Entity.getLyDoHuy(), Entity.getIdHoaDon());
     }
 
     @Override
     public void updateSLSPHUY(Hoadon Entity) {
-        Helper.JDBCHeper.update(UPDATE_SQL_DEM_SP_HUY, Entity.getSlSanPhamHuy(), Entity.getIdHoaDon());
+        helper.JDBCHeper.update(UPDATE_SQL_DEM_SP_HUY, Entity.getSlSanPhamHuy(), Entity.getIdHoaDon());
     }
 
     @Override
     public List<Hoadon> selectAll_trangthai1() {
         return selectBySql(SELECT_ALL_SQL_trangthai1);
     }
-
-    public List<Hoadon> selectByIdNV(String id) {
+    public List<Hoadon> selectByIdNV(String id){
         return selectBySql(SELECT_ALL_SQL_trangthai, id);
     }
-
     public List<Hoadon> selectAll_trangthai1_chuathanhtoan(String id) {
-        return selectBySql(SELECT_ALL_SQL_trangthai1_chuathanhtoan, id);
+        return selectBySql(SELECT_ALL_SQL_trangthai1_chuathanhtoan,id);
     }
 
     public List<Hoadon> selectAll_trangthai1_dathanhtoan(String id) {
-        return selectBySql(SELECT_ALL_SQL_trangthai1_dathanhtoan, id);
+        return selectBySql(SELECT_ALL_SQL_trangthai1_dathanhtoan,id);
     }
 
     @Override
     public List<Hoadon> selectAll_trangthai0() {
         return selectBySql(SELECT_ALL_SQL_trangthai0);
     }
-
     public List<Hoadon> selectAll_trangthai0v1(String id) {
-        return selectBySql(SELECT_ALL_SQL_trangthai0, id);
+        return selectBySql(SELECT_ALL_SQL_trangthai0,id);
     }
-
     public List<Hoadon> selectAll_trangthai0_chuathanhtoan(String id) {
-        return selectBySql(SELECT_ALL_SQL_trangthai0_chuathanhtoan, id);
+        return selectBySql(SELECT_ALL_SQL_trangthai0_chuathanhtoan,id);
     }
 
     public List<Hoadon> selectAll_trangthai0_dathanhtoan(String id) {
