@@ -5,7 +5,7 @@
 package daoimpl;
 
 
-import Model.SanPham;
+import model.SanPham;
 import java.util.List;
 /**
  *
