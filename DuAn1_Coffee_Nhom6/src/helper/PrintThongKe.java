@@ -3,12 +3,12 @@ package helper;
 
 
 //import DAO.BanChitietDAO;
-import Dao.BanChiTietDAO;
-import Dao.HoaDonDAO;
-import Dao.ThongKeDao;
-import Helper.Xdate;
-import Model.BanChiTiet;
-import Model.Hoadon;
+import dao.BanChiTietDAO;
+import dao.HoaDonDAO;
+import dao.ThongKeDao;
+import helper.Xdate;
+import model.BanChiTiet;
+import model.Hoadon;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chapter;
 import com.itextpdf.text.Chunk;
