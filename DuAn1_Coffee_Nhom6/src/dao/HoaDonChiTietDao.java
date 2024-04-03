@@ -1,11 +1,11 @@
 
 package dao;
 
-import Dao.impl.InterfaceHoadonchittiet;
-import Model.HoaDonChiTiet;
-import Helper.JDBCHeper;
+import daoimpl.InterfaceHoadonchittiet;
+import model.HoaDonChiTiet;
+import helper.JDBCHeper;
 import java.sql.ResultSet;
-import Model.SanPham;
+import model.SanPham;
 import java.util.ArrayList;
 import java.util.List;
 

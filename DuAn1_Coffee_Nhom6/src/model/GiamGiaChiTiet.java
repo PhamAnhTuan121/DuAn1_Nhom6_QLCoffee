@@ -1,6 +1,5 @@
 
 package model;
-
 public class GiamGiaChiTiet {
 
     private int idgiamgia;

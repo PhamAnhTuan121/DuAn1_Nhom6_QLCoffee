@@ -1,10 +1,5 @@
 
 package model;
-
-/**
- *
- * @author ADMIN
- */
 public class DonViSanPham {
 
     private String ID_DonviSP;
