@@ -5,7 +5,7 @@
  */
 package dao;
 
-import dao.impl.InterfaceHoadon;
+import daoimpl.InterfaceHoadon;
 import model.Hoadon;
 import helper.JDBCHeper;
 import java.sql.ResultSet;
