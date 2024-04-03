@@ -2,7 +2,6 @@
 package model;
 
 public class HoaDonChiTiet {
-
     private int ID_Hoadon;
     private String ID_SanPHam;
     private int Soluong;
