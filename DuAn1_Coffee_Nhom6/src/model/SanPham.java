@@ -1,6 +1,5 @@
 
 package model;
-
 public class SanPham {
     private String id_sp;
     private String ten_sp;
