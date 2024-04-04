@@ -1,15 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package services;
-import Model.Hoadon;
+import model.Hoadon;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.View.QuanLyHoaDonJPanel;
 import java.util.ArrayList;
 import java.util.List;
-import Dao.HoaDonDAO;
-import Helper.Auth;
+import dao.HoaDonDAO;
+import helper.Auth;
 import java.util.Date;
 import java.util.Locale;
 import javax.swing.JOptionPane;

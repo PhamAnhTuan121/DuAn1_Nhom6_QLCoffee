@@ -4,7 +4,7 @@
  */
 package services;
 
-import dao1.DaoGiamGia;
+import dao.DaoGiamGia;
 import model.GiamGia;
 
 /**

@@ -7,7 +7,7 @@ import model.SanPham;
 import java.util.ArrayList;
 import java.util.List;
 import daoimpl.InterfaceHoadonchittiet;
-public class HoadonchitietDao implements InterfaceHoadonchittiet {
+public class HoaDonChiTietDAO implements InterfaceHoadonchittiet {
 
     String INSERT_SQL = "INSERT dbo.HoaDonChiTiet VALUES (?,?,?,?,?,?,?,?)";
     String UPDATE_SQL_TrangThai = "UPDATE dbo.HoaDonChiTiet SET TTthanhtoan = ?  WHERE ID_HoaDon = ? AND ID_SanPham = ?";

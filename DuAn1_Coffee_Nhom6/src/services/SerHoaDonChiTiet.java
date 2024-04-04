@@ -1,20 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package services;
 
-import Model.*;
+package services;
+import dao.*;
+import model.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import View.HoadonchitietJDialog;
-import Dao.HoadonchitietDAO;
-import Model.DonViSanPham;
-import Model.GiamGiaChiTiet;
-import Model.Hoadon;
-import Dao.*;
-import Model.SanPham;
+import views.HoadonchitietJDialog;
+import model.DonViSanPham;
+import model.GiamGiaChiTiet;
+import model.Hoadon;
+import model.SanPham;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.text.NumberFormat;
@@ -27,7 +22,7 @@ import java.util.Locale;
 public class SerHoaDonChiTiet {
 
     Locale vn = new Locale("vi", "VN");
-    HoadonchitietDAO dao = new HoadonchitietDAO();
+    HoaDonChiTietDAO dao = new HoaDonChiTietDAO();
     DaoGiamGia DAOGG = new DaoGiamGia();
     ChiTietGiamGiaDao DAOGGCT = new ChiTietGiamGiaDao();
 

@@ -1,6 +1,6 @@
 package services;
 
-import dao1.NhanVienDAO;
+import dao.NhanVienDAO;
 import model.NhanVien;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
