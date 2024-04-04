@@ -3,11 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package dao;
-import Model.DonViSanPham;
+import model.DonViSanPham;
 import java.util.*;
-import Helper.JDBCHeper;
+import helper.JDBCHeper;
 import java.sql.ResultSet;
-
+import daoimpl.InterfaceDonViSanPham;
 /**
  *
  * @author Admin

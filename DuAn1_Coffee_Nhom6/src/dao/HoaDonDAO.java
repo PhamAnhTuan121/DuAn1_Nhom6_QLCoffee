@@ -53,23 +53,23 @@ public class HoaDonDAO implements InterfaceHoadon {
 
     @Override
     public void insert(Hoadon Entity) {
-        Helper.JDBCHeper.update(INSERT_SQL, Entity.getIdNhanVien(), Entity.getNgayTao(), Entity.isTrangThai(),
+        helper.JDBCHeper.update(INSERT_SQL, Entity.getIdNhanVien(), Entity.getNgayTao(), Entity.isTrangThai(),
                 Entity.isTrangThaiTT(), Entity.getThanhTien(), Entity.getLyDoHuy(), Entity.getSlSanPhamHuy(), Entity.getGhiChu(),
                 Entity.getSDT(), Entity.getTen(), Entity.getDiaChi(), Entity.getTienShip());
     }
 
     @Override
     public void updateThanhToan(Hoadon Entity) {
-        Helper.JDBCHeper.update(UPDATE_SQL_TrangThaiTT, Entity.isTrangThaiTT(), Entity.getIdHoaDon());
+        helper.JDBCHeper.update(UPDATE_SQL_TrangThaiTT, Entity.isTrangThaiTT(), Entity.getIdHoaDon());
     }
 
     @Override
     public void delete(Hoadon Entity) {
-        Helper.JDBCHeper.update(DELETE_SQL, Entity.getIdHoaDon());
+        helper.JDBCHeper.update(DELETE_SQL, Entity.getIdHoaDon());
     }
 
     public void updatekh(Hoadon Entity) {
-        Helper.JDBCHeper.update(UPDATE_SQL_khachhang, Entity.getSDT(), Entity.getTen(), Entity.getTienShip(), Entity.getDiaChi(), Entity.getIdHoaDon());
+        helper.JDBCHeper.update(UPDATE_SQL_khachhang, Entity.getSDT(), Entity.getTen(), Entity.getTienShip(), Entity.getDiaChi(), Entity.getIdHoaDon());
     }
 
     @Override
@@ -125,22 +125,22 @@ public class HoaDonDAO implements InterfaceHoadon {
 
     @Override
     public void updateTrangThai(Hoadon Entity) {
-        Helper.JDBCHeper.update(UPDATE_SQL_TrangThai, Entity.isTrangThai(), Entity.getIdHoaDon());
+        helper.JDBCHeper.update(UPDATE_SQL_TrangThai, Entity.isTrangThai(), Entity.getIdHoaDon());
     }
 
     @Override
     public void updateThanhtien(Hoadon Entity) {
-        Helper.JDBCHeper.update(UPDATE_SQL_ThanhTien, Entity.getThanhTien(), Entity.getIdHoaDon());
+        helper.JDBCHeper.update(UPDATE_SQL_ThanhTien, Entity.getThanhTien(), Entity.getIdHoaDon());
     }
 
     @Override
     public void updateLydohuy(Hoadon Entity) {
-        Helper.JDBCHeper.update(UPDATE_SQL_Ly_DO, Entity.getLyDoHuy(), Entity.getIdHoaDon());
+        helper.JDBCHeper.update(UPDATE_SQL_Ly_DO, Entity.getLyDoHuy(), Entity.getIdHoaDon());
     }
 
     @Override
     public void updateSLSPHUY(Hoadon Entity) {
-        Helper.JDBCHeper.update(UPDATE_SQL_DEM_SP_HUY, Entity.getSlSanPhamHuy(), Entity.getIdHoaDon());
+        helper.JDBCHeper.update(UPDATE_SQL_DEM_SP_HUY, Entity.getSlSanPhamHuy(), Entity.getIdHoaDon());
     }
 
     @Override
